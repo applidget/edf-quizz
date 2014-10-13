@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-      <a class="title" href="/"><h1 class="center">EDF QUIZ</h1></a>
+      <h1 id="title" class="center">EDF QUIZ</h1>
       
       <hr>
       <div class="center">
@@ -391,6 +391,11 @@
           $('#q' + value).on("click", function() {
             $('#q' + value + 'answer').show();
           })
+          
+          $('#title').on("click", function() {
+            $('#q' + value + 'answer').hide();
+          })
+          
         })
       });
     </script>
