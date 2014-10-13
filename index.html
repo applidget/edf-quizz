@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="title" class="center">EDF QUIZ</h1>
+      <h1 id="title" class="center">EDF QUIZ <small>Jeu des sept erreurs</small></h1>
       
       <hr>
       <div class="center">
@@ -136,7 +136,7 @@
         <label class="radio-inline">
           <input type="radio" name="q4" id="q4false" value="false"> NON
         </label>
-        <span id="q4" class="btn btn-default radio-btn" data-answer="dalse">Valider</span>
+        <span id="q4" class="btn btn-default radio-btn" data-answer="false">Valider</span>
         <div class="answer" id="q4answer">
           <p id="goodq4" class="label label-success answer-notice" style="display:none;">Bonne réponse<p>
           <p id="badq4" class="label label-danger answer-notice">Mauvaise réponse<p>
@@ -365,8 +365,8 @@
     <script>
       $( document ).ready(function() {
         $('.answer').hide();
-        number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-
+        number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];        
+        
         $.each(number, function(index, value) {
           $('#q' + value + 'false').on("click", function() {
             if ($(this).val() == $('#q' + value).data('answer').toString()) {
@@ -393,7 +393,8 @@
           })
           
           $('#title').on("click", function() {
-            $('#q' + value + 'answer').hide();
+            $('.answer').hide();
+            $('#q' + value + 'true').trigger("click");
           })
           
         })
